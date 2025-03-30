@@ -1,1 +1,5 @@
 google-generativeai
+json
+os
+requests
+flask
