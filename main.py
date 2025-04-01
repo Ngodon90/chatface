@@ -42,7 +42,7 @@ def webhook():
 def send_message(recipient_id, message_text):
     url = f"https://graph.facebook.com/v18.0/me/messages?access_token={PAGE_ACCESS_TOKEN}"
     headers = {"Content-Type": "application/json"}
-    data = {"recipient": {"9486000328150060": recipient_id}, "message": {"text": message_text}}
+    data = {"recipient": {"id": recipient_id}, "message": {"text": message_text}}
     requests.post(url, headers=headers, json=data)
 
 # Đọc dữ liệu sản phẩm từ file JSON
