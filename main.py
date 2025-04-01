@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-PAGE_ACCESS_TOKEN = "EAAHgj4r56eEBO5CZBsVXPStVF9MWkeFjKzcwKL4jG8AmvZAKVsHgEsFxwBZApEZCWcePZC4fT2jYstK00fGRbBbckMEVVczZAeHPyh3ZCeZA5o1mMxuqwpI0pTrFHrZBqjAQLygD6GUCZCYSJEGpZC6NO3wTwnW2tHuRb3RG8GT4UW25WW7llMqpGsT7q5YgZAg8Tgs7"
+PAGE_ACCESS_TOKEN = "EAAUTpVmrNMMBO1hQbWouTOV4wtTvC02ThJQY7QnzsrtZCbj9V12OdnrDkaypPZCUIMEJew3ZCthLa6hSgBYx7Xdqfj9O3LfaPDZA1JZByRhZCvvcKgsG3YeXq52PdnFBLqipoon396ZAaGejn05vJr9ZCwefyx2LHNpANwJfrjf7aDePu9uGui1YTjZCMOZA9j1YPl"
 VERIFY_TOKEN = "171119090216"
 
 
@@ -25,6 +25,7 @@ def verify():
 @app.route("/webhook", methods=["POST"])
 def webhook():
     data = request.get_json()
+    print(json.dumps(data, indent=2))
     if data["object"] == "page":
         for entry in data["entry"]:
             for messaging_event in entry["messaging"]:
